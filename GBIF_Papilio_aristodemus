@@ -1,5 +1,7 @@
 #!/bin/env python 
 
+#NOTE: line 10 is written for use in Jupyter notebooks. 
+
 #Script to print occurence data from GBIF
 
 #install and import packages and necessary modules
