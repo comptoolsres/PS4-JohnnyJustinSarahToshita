@@ -1,0 +1,23 @@
+import requests
+import json
+
+apiurl = "https://blockchain.info/ticker"
+
+#Bitcoin rates are updated every 15 minutes and courtsey of Blockchain, conversion rates were current as of 9:13PM 10/29/20
+
+def function(url):
+ 
+    return requests.get(url).json()
+bitcoinprice = (function(apiurl))
+
+
+x = (float(bitcoinprice['USD']['buy']))
+
+print('The most recent asking price in USD for bitcoin is:', x)
+print('this is roughly', x*1.29, 'GBP (Great Brittish Pounds)')
+print('or', x*.7, 'AUD (Australian Dollar)')
+print('or', x*.75, 'CAN (Canadian Dollar)')
+print('or', x*1.17, 'EUR (Euros)')
+print('or', x*.15, 'CNY (Chinese Yaun)')
+print('or', x*0.100125, 'VEF (Venezuelan Bolívar)')
+print('or', x*.00024, 'KHR (Cambodian Riel):(')
