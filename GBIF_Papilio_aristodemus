@@ -1,0 +1,24 @@
+#!/bin/env python 
+
+#Script to print occurence data from GBIF
+
+#install and import packages and necessary modules
+import requests
+import sys
+!{sys.executable} -m pip install pygbif
+import pygbif
+from pygbif import species
+from pygbif import occurrences as occ
+
+#add url of api
+gbif = "http://api.gbif.org/v1/"
+response = requests.get(gbif)
+
+#check to make sure this worked
+print(response.status_code)
+
+#search for species of interest
+species.name_suggest(q='Papilio aristodemus')
+
+#Using SpeciesKey in output from code in lines 18-19, print occurence data for species of interest
+occ.search(taxonKey = 1938063)
